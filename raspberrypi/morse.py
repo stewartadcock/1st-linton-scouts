@@ -63,7 +63,6 @@ encode = {'a':[dot, dash],
           '8':[dash, dash, dash, dot, dot],
           '9':[dash, dash, dash, dash, dot],
           '0':[dash, dash, dash, dash, dash],
-          '0':[dash, dash, dash, dash, dash],
           '.':[dot, dash, dot, dash, dot, dash],
           '?':[dot, dot, dash, dash, dot, dot],
           }
