@@ -15,8 +15,10 @@ import time
 
 print (__doc__)
 
+signal_pin = 23
+
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(24, GPIO.OUT)
+GPIO.setup(signal_pin, GPIO.OUT)
 
 gap_time = 0.1
 short_time = 0.3
@@ -77,14 +79,14 @@ try:
         time.sleep(short_time)
         for bleep in encode[character]:
             time.sleep(gap_time)
-            GPIO.output(24, True)
+            GPIO.output(signal_pin, True)
             if bleep == dot:
               time.sleep(dot_time)
               print ('dot')
             else:
               time.sleep(dash_time)
               print ('dash')
-            GPIO.output(24, False)
+            GPIO.output(signal_pin, False)
       else:
         print ('> ?')
 
