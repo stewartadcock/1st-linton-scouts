@@ -52,7 +52,7 @@ step_time = 0.5
 try:
   while True:
     character = getch()
-    if character == 'x':
+    if character == 'x' or character == '0x03':
       GPIO.cleanup()
       exit()
     elif character in actions:
