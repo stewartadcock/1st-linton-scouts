@@ -1,14 +1,14 @@
-"""motors-dc.py - Control a pair of DC motirs using a Raspberry Pi. 
+"""motors-dc.py - Control a pair of DC motors using a Raspberry Pi. 
 
 This drives the dual L9110 H-bridge driver GPIO circuit with two DC motors. See l9110.md for details. 
 At the console, use the following keys to control the two motors. 
 
-As an exercise, can you adjust this script to control the motor speed too?
-Tip: what happens if you start and stop the motors rapidly?
-
-Press 'x' to exit.
+Press 'Ctrl+c' or 'x' to exit.
 Press 'a', 'z', 'n', 'm' for forward, backward, right-only, left-only.
 What do you think 'j' and 'k' will do?
+
+As an exercise, can you adjust this script to control the motor speed too?
+Tip: what happens if you start and stop the motors rapidly?
 """
 
 import RPi.GPIO as GPIO
