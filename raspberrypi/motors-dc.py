@@ -5,6 +5,7 @@ At the console, use the following keys to control the two motors.
 
 Press 'Ctrl+c' or 'x' to exit.
 Press 'a', 'z', 'n', 'm' for forward, backward, right-only, left-only.
+Press ' ' to stop.
 What do you think 'j' and 'k' will do?
 
 As an exercise, can you adjust this script to control the motor speed too?
@@ -45,6 +46,7 @@ actions = {'a':[1,0,1,0],
            'm':[0,0,1,0],
            'j':[0,1,1,0],
            'k':[1,0,0,1],
+           ' ':[0,0,0,0],
           }
 
 step_time = 0.5
@@ -58,7 +60,7 @@ try:
     elif character in actions:
       print ('> ' + character)
       for pin in range(1, len(control_pins)):
-        GPIO.output(control_pins[pin], actions[character][pin]) 
+        GPIO.output(control_pins[pin], actions[character][pin] == 1) 
       time.sleep(step_time)
     else:
       for pin in control_pins:
