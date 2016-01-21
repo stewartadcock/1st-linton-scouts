@@ -33,7 +33,7 @@ def getch():
 
 print (__doc__)
 
-control_pins = [23, 25, 17, 22]
+control_pins = [23, 24, 18, 25]
 
 GPIO.setmode(GPIO.BCM)
 for pin in control_pins:
@@ -59,8 +59,8 @@ try:
       exit()
     elif character in actions:
       print ('> ' + character)
-      for pin in range(1, len(control_pins)):
-        GPIO.output(control_pins[pin], actions[character][pin] == 1) 
+      for pin in range(0, len(control_pins)):
+        GPIO.output(control_pins[pin], actions[character][pin] != 0) 
       time.sleep(step_time)
     else:
       for pin in control_pins:
