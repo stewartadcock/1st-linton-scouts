@@ -13,13 +13,13 @@ import time
 print (__doc__)
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(4, GPIO.IN)
+GPIO.setup(22, GPIO.IN)
 
 try:
   while True:
     time.sleep(0.1)
 
-    if GPIO.input(4)==1:
+    if GPIO.input(22)==1:
       print ('.')
     else:
       print ('X')
