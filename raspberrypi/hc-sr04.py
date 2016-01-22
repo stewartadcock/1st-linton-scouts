@@ -10,25 +10,28 @@ import time
 
 print (__doc__)
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(24, GPIO.OUT) # Signal
-GPIO.setup(22, GPIO.IN) # Echo
+trigger_pin = 17
+echo_pin = 27
 
-GPIO.output(24, False)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(trigger_pin, GPIO.OUT)
+GPIO.setup(echo_pin, GPIO.IN)
+
+GPIO.output(trigger_pin, False)
 
 try:
   while True:
     time.sleep(1)
 
     # Send 10us pulse
-    GPIO.output(24, True)
+    GPIO.output(trigger_pin, True)
     time.sleep(0.00001)
-    GPIO.output(24, False)
+    GPIO.output(trigger_pin, False)
     start = time.time()
-    while GPIO.input(22)==0:
+    while GPIO.input(echo_pin)==0:
       start = time.time()
 
-    while GPIO.input(22)==1:
+    while GPIO.input(echo_pin)==1:
       stop = time.time()
 
     # Distance pulse travelled is elapsed time multiplied by the speed
