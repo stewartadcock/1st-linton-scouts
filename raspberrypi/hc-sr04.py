@@ -38,8 +38,9 @@ try:
     # of sound (m/s) and object must be half-way.
     elapsed = stop-start
     distance = elapsed * 340 * 0.5
+    distance = 0.01 * int(distance*100)
 
-    print ("Distance (m) = " + str(distance))
+    print ("Distance (m) = {:.2f}".format(distance))
 
 except KeyboardInterrupt:
   GPIO.cleanup()
