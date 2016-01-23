@@ -1,10 +1,20 @@
+"""ky-006.py - demo script for KY-006 GPIO circuit - a passive buzzer.                                                                                          
+
+See ky-006.md for details.
+
+Press Ctrl+c to exit.
+"""
+
 import RPi.GPIO as GPIO
 import time
 
+print (__doc__)
+
+import RPi.GPIO as GPIO
+import time
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(24, GPIO.OUT)
-
 
 try:
   while True:
