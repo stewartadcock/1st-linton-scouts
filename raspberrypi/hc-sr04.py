@@ -13,6 +13,8 @@ print (__doc__)
 trigger_pin = 17
 echo_pin = 27
 
+SPEED_OF_SOUND = 343.2 # in dry air at 20 degrees C, 1 atm.
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(trigger_pin, GPIO.OUT)
 GPIO.setup(echo_pin, GPIO.IN)
@@ -37,7 +39,7 @@ try:
     # Distance pulse travelled is elapsed time multiplied by the speed
     # of sound (m/s) and object must be half-way.
     elapsed = stop-start
-    distance = elapsed * 340 * 0.5
+    distance = elapsed * SPEED_OF_SOUND * 0.5
     distance = 0.01 * int(distance*100)
 
     print ("Distance (m) = {:.2f}".format(distance))
