@@ -19,7 +19,7 @@ try:
   while True:
     time.sleep(0.1)
 
-    while GPIO.input(signal_pin)==0:
+    while not GPIO.input(signal_pin):
       pass
 
     print ("Motion detected!")

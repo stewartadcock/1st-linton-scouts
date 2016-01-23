@@ -28,10 +28,10 @@ try:
     time.sleep(0.00001)
     GPIO.output(trigger_pin, False)
     start = time.time()
-    while GPIO.input(echo_pin)==0:
+    while not GPIO.input(echo_pin):
       start = time.time()
 
-    while GPIO.input(echo_pin)==1:
+    while GPIO.input(echo_pin):
       stop = time.time()
 
     # Distance pulse travelled is elapsed time multiplied by the speed

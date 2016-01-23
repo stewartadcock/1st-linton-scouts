@@ -19,7 +19,7 @@ try:
   while True:
     time.sleep(0.1)
 
-    if GPIO.input(22)==1:
+    if GPIO.input(22):
       print ('.')
     else:
       print ('X')
