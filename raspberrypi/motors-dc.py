@@ -15,12 +15,11 @@ Tip: what happens if you start and stop the motors rapidly?
 import RPi.GPIO as GPIO
 import sys
 import termios
-import time
 import tty
 
 # As we know that this is a POSIX system, we can define a getch-like function that manipulates the tty.
 def getch():
-  """Return a singke character from stdin.
+  """Return a single character from stdin.
   """
   fd = sys.stdin.fileno()
   old_settings = termios.tcgetattr(fd)
