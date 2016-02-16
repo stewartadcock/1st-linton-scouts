@@ -8,7 +8,7 @@ This script requires Python3.
 Press 'Ctrl+c' or 'x' to exit.
 
 Press 'a', 'z', 'n', 'm' for forward, backward, right-only, left-only.
-Press 'j', 'k' rotate right, left.
+Press 'j', 'k' rotate left, right.
 Press ' ' to stop the motors.
 
 Press 'r', 'e', 's' to record instructions, play instructions, stop recording instructions.
