@@ -1,5 +1,7 @@
 """4-buttons.py - a GPIO circuit with for momentary push buttons.
 
+See 4-button.md for details.
+
 Press Ctrl+c to exit.
 """
 
